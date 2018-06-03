@@ -18,12 +18,12 @@ namespace CafeForm.Classes
             {
                 return images[index1];
             }
-
         }
 
         public void AddFood(Image newImage)
         {
-            images[images.Length] = newImage;
+            Array.Resize(ref images, images.Length + 1);
+            images[images.Length - 1] = newImage;
         }
 
         public void RemoveFood(int index)
