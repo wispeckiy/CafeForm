@@ -53,7 +53,7 @@ namespace CafeForm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = client[0, 0];
+            pictureBox1.BackgroundImage = client[r.Next(0,6), r.Next(1,3)];
           
         }
     }
