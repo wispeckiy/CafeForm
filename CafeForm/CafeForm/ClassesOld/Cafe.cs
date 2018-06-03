@@ -38,7 +38,7 @@ namespace Cafe
             return true;
         }
 
-        public void Play()
+        public void PlayConsole()
         {
             Start:
             int choice, wish;

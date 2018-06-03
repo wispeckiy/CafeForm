@@ -51,6 +51,11 @@
     <Compile Include="ClassesOld\CurrentClient.cs" />
     <Compile Include="ClassesOld\IClient.cs" />
     <Compile Include="ClassesOld\View.cs" />
+    <Compile Include="Classes\Cafe.cs" />
+    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\CurrentClient.cs" />
+    <Compile Include="Classes\Food.cs" />
+    <Compile Include="Classes\IClient.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -85,8 +91,88 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
-    <Folder Include="Resources\" />
+    <None Include="Resources\Grandfather-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandfather-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandfather-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandfather-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-03.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
