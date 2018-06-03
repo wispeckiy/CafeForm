@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace CafeForm.Classes
 {
@@ -16,11 +17,17 @@ namespace CafeForm.Classes
             imageGeneration();
         }
 
-        public override void imageGeneration()
+        public Image imageGeneration()
         {
             Random rand = new Random();
             manType = rand.Next(0, 6);
-            myImage = images[manType, state];
+            //myImage = images[manType, state];
+            return images[manType, state];
+        }
+
+        public int ManType
+        {
+            get { return manType; }
         }
 
         public int State
