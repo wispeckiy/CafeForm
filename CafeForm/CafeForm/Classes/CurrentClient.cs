@@ -9,20 +9,15 @@ namespace CafeForm.Classes
 {
     class CurrentClient : Client
     {
+        readonly int manType;
+        bool flagWin = false;
         public CurrentClient()
         {
             tryCount = 3;
             Random rand = new Random();
-            state = rand.Next(1, 3);
-            myImage = imageGeneration();
-        }
-
-        public Image imageGeneration()
-        {
-            Random rand = new Random();
             manType = rand.Next(0, 6);
+            state = rand.Next(1, 3);
             myImage = images[manType, state];
-            return myImage;
         }
 
         public Image MyImage
@@ -48,7 +43,7 @@ namespace CafeForm.Classes
 
         public override bool StateIncrement()
         {
-            if (state > 3 || tryCount <= 0) return false;
+            if (state >= 3 || tryCount <= 1) return false;
             state++;
             tryCount--;
             myImage = images[manType, state];
@@ -57,7 +52,7 @@ namespace CafeForm.Classes
 
         public override bool StateDecrement()
         {
-            if (state <= 0 || tryCount <= 0) return false;
+            if (state <= 0 || tryCount <= 1) return false;
             state--;
             tryCount--;
             myImage = images[manType, state];
@@ -68,6 +63,15 @@ namespace CafeForm.Classes
         {
             if (state == 0) return -10;
             else return state * 10;
+        }
+
+        public bool Winner()
+        {
+            flagWin = true;
+            if (state <= 0)
+                flagWin = false;
+
+            return flagWin;
         }
     }
 }

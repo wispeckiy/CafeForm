@@ -18,14 +18,17 @@ namespace CafeForm.Classes
         {
             balance = 10;
             food = new Classes.Food();
-            Client = new CurrentClient();
+         //   Client = new CurrentClient();
         }
 
         public Image getFoodImage(int i) {
             return food[i];
         }
 
-        
+        public void NewClient()
+        {
+            Client = new CurrentClient();
+        }
 
         //public List<Image> getFoodImages()
         //{

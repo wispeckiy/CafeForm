@@ -12,7 +12,7 @@ namespace CafeForm.Classes
     {
         protected int tryCount;
         protected int state;
-        protected int manType;
+       
 
         protected Image myImage = Resources.ClearImage;
         protected Image[,] images = {

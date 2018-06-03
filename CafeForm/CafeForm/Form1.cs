@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CafeForm.Properties;
 
 namespace CafeForm
 {
@@ -25,7 +25,8 @@ namespace CafeForm
         {
             //Console.Title = "CAFE";
             //Cafe start = new Cafe();
-            Initialize();
+            cafe = new Cafe();  
+            NewRoundView();
 
 
         }
@@ -43,14 +44,15 @@ namespace CafeForm
             }
         }
 
-        private void Initialize() {
-            cafe = new Cafe();
-            pictureBox1.BackgroundImage = cafe.Client.MyImage;
+        private void NewRoundView() {
+              cafe.NewClient();
             RandomNumber(3);
-            pictureBox1.BackgroundImage = cafe.Client[r.Next(0,6), r.Next(1,3)];
+            pictureBox1.BackgroundImage = cafe.Client[cafe.Client.ManType, cafe.Client.State];
             button1.BackgroundImage = cafe.getFoodImage(rand[0]);
             button2.BackgroundImage = cafe.getFoodImage(rand[1]);
             button3.BackgroundImage = cafe.getFoodImage(rand[2]);
+         
+
         }
 
 
@@ -61,21 +63,56 @@ namespace CafeForm
             Image img = cafe.GetClientWish();
             if (b.BackgroundImage.Equals(img))
             {
-                if(cafe.Client.StateIncrement());
+                if(!cafe.Client.StateIncrement())
+                {
+                    EndRound(cafe.Client.Winner());
+                }
+            
             }
             else
             {
-                if(cafe.Client.StateDecrement());
+                if(!cafe.Client.StateDecrement())
+                    EndRound(cafe.Client.Winner());
             }
             ChangeLabels(b, img);
         }
         
         private void ChangeLabels(Button b, Image img)
         {
-
             pictureBox1.BackgroundImage = cafe.Client.MyImage;
             pictureBox2.BackgroundImage = img;
             pictureBox3.BackgroundImage = b.BackgroundImage;
+
+        }
+
+        private void NewRound()
+        {
+            button5.Enabled = false;
+            WinLoseimg.Visible = false;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            NewRoundView();
+        }
+        private void EndRound(bool f)
+        {
+            button5.Enabled = true;
+            WinLoseimg.Visible = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            if (f)
+                WinLoseimg.BackgroundImage = Resources.youWin;
+            else
+                WinLoseimg.BackgroundImage = Resources.youLose;
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            NewRound();
         }
     }
+
+
 }
