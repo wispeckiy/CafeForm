@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace Cafe
+namespace Cafe1
 {
     class Cafe
     {
@@ -38,7 +38,7 @@ namespace Cafe
             return true;
         }
 
-        public void PlayConsole()
+        public void Play()
         {
             Start:
             int choice, wish;
