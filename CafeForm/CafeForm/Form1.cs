@@ -43,7 +43,7 @@ namespace CafeForm
 
         private void Initialize() {
             client = new CurrentClient();
-            pictureBox1.BackgroundImage = 
+            //pictureBox1.BackgroundImage = 
             Cafe cafe = new Cafe();
             RandomNumber(3);
             button1.BackgroundImage = cafe.getFoodImage(rand[0]);
