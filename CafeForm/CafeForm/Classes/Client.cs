@@ -13,7 +13,8 @@ namespace CafeForm.Classes
         protected int tryCount;
         protected int state;
         protected int manType;
-        //protected Image myImage = Resources.ClearImage;
+
+        protected Image myImage = Resources.ClearImage;
         protected Image[,] images = {
             { Resources.Boy_02,Resources.Boy_04,Resources.Boy_03,Resources.Boy_01},
             { Resources.Girl_02,Resources.Girl_04,Resources.Girl_03,Resources.Girl_01 },
@@ -31,6 +32,7 @@ namespace CafeForm.Classes
             }
            
         }
+        
 
         public Client()
         {
@@ -44,8 +46,8 @@ namespace CafeForm.Classes
 
         public abstract int Pay();
 
-        public abstract void StateIncrement();
+        public abstract bool StateIncrement();
 
-        public abstract void StateDecrement();
+        public abstract bool StateDecrement();
     }
 }

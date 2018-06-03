@@ -14,15 +14,21 @@ namespace CafeForm.Classes
             tryCount = 3;
             Random rand = new Random();
             state = rand.Next(1, 3);
-            imageGeneration();
+            myImage = imageGeneration();
         }
 
         public Image imageGeneration()
         {
             Random rand = new Random();
             manType = rand.Next(0, 6);
-            //myImage = images[manType, state];
-            return images[manType, state];
+            myImage = images[manType, state];
+            return myImage;
+        }
+
+        public Image MyImage
+        {
+            get { return myImage; }
+            set { myImage = value; }
         }
 
         public int ManType
@@ -40,16 +46,22 @@ namespace CafeForm.Classes
             get { return tryCount; }
         }
 
-        public override void StateIncrement()
+        public override bool StateIncrement()
         {
+            if (state > 3 || tryCount <= 0) return false;
             state++;
             tryCount--;
+            myImage = images[manType, state];
+            return true;
         }
 
-        public override void StateDecrement()
+        public override bool StateDecrement()
         {
+            if (state <= 0 || tryCount <= 0) return false;
             state--;
             tryCount--;
+            myImage = images[manType, state];
+            return true;
         }
 
         public override int Pay()

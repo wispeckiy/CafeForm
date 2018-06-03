@@ -11,19 +11,21 @@ namespace CafeForm.Classes
     class Cafe
     {
         int balance;
-        CurrentClient client;
+        public CurrentClient Client { get; set; }
         Food food;
 
         public Cafe()
         {
             balance = 10;
             food = new Classes.Food();
-
+            Client = new CurrentClient();
         }
 
         public Image getFoodImage(int i) {
             return food[i];
         }
+
+        
 
         //public List<Image> getFoodImages()
         //{
@@ -32,5 +34,18 @@ namespace CafeForm.Classes
         //        list.Add(im);
         //    return list;
         //}
+
+        public Image GetClientWish()
+        {
+            return food[Client.RandomWish(food.GetLenght())];
+        }
+        
+        protected bool CheckBalance()
+        {
+            if (balance >= 0 && balance < 100) return true;
+            else return false;
+        }
+        
+
     }
 }

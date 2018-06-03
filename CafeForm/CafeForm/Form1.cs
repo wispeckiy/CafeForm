@@ -18,7 +18,9 @@ namespace CafeForm
         {
             InitializeComponent();
         }
-        CurrentClient client;
+
+        
+        Cafe cafe;
         private void Form1_Load(object sender, EventArgs e)
         {
             //Console.Title = "CAFE";
@@ -42,19 +44,38 @@ namespace CafeForm
         }
 
         private void Initialize() {
-            client = new CurrentClient();
-            pictureBox1.BackgroundImage = client.imageGeneration();
-            Cafe cafe = new Cafe();
+            cafe = new Cafe();
+            pictureBox1.BackgroundImage = cafe.Client.MyImage;
             RandomNumber(3);
+            pictureBox1.BackgroundImage = cafe.Client[r.Next(0,6), r.Next(1,3)];
             button1.BackgroundImage = cafe.getFoodImage(rand[0]);
             button2.BackgroundImage = cafe.getFoodImage(rand[1]);
             button3.BackgroundImage = cafe.getFoodImage(rand[2]);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+
+
+        private void button_Click(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = client[r.Next(0,6), r.Next(1,3)];
-          
+            Button b = (Button)sender;
+            Image img = cafe.GetClientWish();
+            if (b.BackgroundImage.Equals(img))
+            {
+                if(cafe.Client.StateIncrement());
+            }
+            else
+            {
+                if(cafe.Client.StateDecrement());
+            }
+            ChangeLabels(b, img);
+        }
+        
+        private void ChangeLabels(Button b, Image img)
+        {
+
+            pictureBox1.BackgroundImage = cafe.Client.MyImage;
+            pictureBox2.BackgroundImage = img;
+            pictureBox3.BackgroundImage = b.BackgroundImage;
         }
     }
 }

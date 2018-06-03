@@ -40,7 +40,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.WinLoseimg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WinLoseimg)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -54,6 +61,7 @@
             this.button2.Size = new System.Drawing.Size(150, 150);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button_Click);
             // 
             // button3
             // 
@@ -66,6 +74,7 @@
             this.button3.Size = new System.Drawing.Size(150, 150);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button_Click);
             // 
             // pictureBox1
             // 
@@ -80,10 +89,10 @@
             // ClientWish_Label
             // 
             this.ClientWish_Label.BackColor = System.Drawing.Color.Transparent;
-            this.ClientWish_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ClientWish_Label.Location = new System.Drawing.Point(69, 203);
+            this.ClientWish_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientWish_Label.Location = new System.Drawing.Point(115, 203);
             this.ClientWish_Label.Name = "ClientWish_Label";
-            this.ClientWish_Label.Size = new System.Drawing.Size(200, 60);
+            this.ClientWish_Label.Size = new System.Drawing.Size(100, 30);
             this.ClientWish_Label.TabIndex = 4;
             this.ClientWish_Label.Text = "Client wish";
             this.ClientWish_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,10 +100,10 @@
             // Choice_Label
             // 
             this.Choice_Label.BackColor = System.Drawing.Color.Transparent;
-            this.Choice_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Choice_Label.Location = new System.Drawing.Point(321, 203);
+            this.Choice_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.Choice_Label.Location = new System.Drawing.Point(355, 203);
             this.Choice_Label.Name = "Choice_Label";
-            this.Choice_Label.Size = new System.Drawing.Size(200, 60);
+            this.Choice_Label.Size = new System.Drawing.Size(100, 30);
             this.Choice_Label.TabIndex = 5;
             this.Choice_Label.Text = "Your choice";
             this.Choice_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,7 +112,7 @@
             // 
             this.Earned_Label.BackColor = System.Drawing.Color.Transparent;
             this.Earned_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Earned_Label.Location = new System.Drawing.Point(69, 323);
+            this.Earned_Label.Location = new System.Drawing.Point(69, 388);
             this.Earned_Label.Name = "Earned_Label";
             this.Earned_Label.Size = new System.Drawing.Size(150, 40);
             this.Earned_Label.TabIndex = 6;
@@ -153,6 +162,7 @@
             this.button1.Size = new System.Drawing.Size(150, 150);
             this.button1.TabIndex = 10;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button_Click);
             // 
             // button4
             // 
@@ -162,7 +172,50 @@
             this.button4.TabIndex = 11;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.button_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(119, 251);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(359, 244);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.Info;
+            this.button5.Enabled = false;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.button5.Location = new System.Drawing.Point(655, 28);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(229, 77);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "New client";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // WinLoseimg
+            // 
+            this.WinLoseimg.BackColor = System.Drawing.Color.Transparent;
+            this.WinLoseimg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.WinLoseimg.Location = new System.Drawing.Point(581, 240);
+            this.WinLoseimg.Name = "WinLoseimg";
+            this.WinLoseimg.Size = new System.Drawing.Size(350, 350);
+            this.WinLoseimg.TabIndex = 15;
+            this.WinLoseimg.TabStop = false;
+            this.WinLoseimg.Visible = false;
             // 
             // Form1
             // 
@@ -171,6 +224,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(947, 602);
+            this.Controls.Add(this.WinLoseimg);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
@@ -188,6 +245,9 @@
             this.Text = "CAFE";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WinLoseimg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,6 +264,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox WinLoseimg;
     }
 }
 
