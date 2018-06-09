@@ -21,6 +21,13 @@ namespace CafeForm.Classes
          //   Client = new CurrentClient();
         }
 
+        public void ChangeBalance(int value)
+        {
+            balance += value;
+        }
+
+        public int GetBalance() { return balance; }
+
         public Image getFoodImage(int i) {
             return food[i];
         }
@@ -43,10 +50,11 @@ namespace CafeForm.Classes
             return food[Client.RandomWish(food.GetLenght())];
         }
         
-        protected bool CheckBalance()
+        public int CheckBalance()
         {
-            if (balance >= 0 && balance < 100) return true;
-            else return false;
+            if (balance >= 0 && balance < 100) return 0;
+            else if (balance >= 100) return 1;
+            else return -1;
         }
         
 

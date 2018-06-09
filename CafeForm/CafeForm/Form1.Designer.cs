@@ -213,7 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(947, 602);
+            this.ClientSize = new System.Drawing.Size(944, 601);
             this.Controls.Add(this.WinLoseimg);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.pictureBox3);

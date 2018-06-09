@@ -174,10 +174,16 @@
     <None Include="Resources\food-03.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\youLose.png" />
+    <None Include="Resources\youWin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\youWin.png" />
+    <None Include="Resources\YouLoseGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\You_LoseNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\You_WinNew.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -208,4 +208,10 @@
   <data name="youWin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\youWin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="You_LoseGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\You_LoseNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="You_WinGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\You_WinNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

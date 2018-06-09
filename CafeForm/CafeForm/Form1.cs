@@ -25,10 +25,9 @@ namespace CafeForm
         {
             //Console.Title = "CAFE";
             //Cafe start = new Cafe();
-            cafe = new Cafe();  
+            cafe = new Cafe();
+            Balance_Label.Text = "Balance: " + cafe.GetBalance().ToString();
             NewRoundView();
-
-
         }
 
         Random r = new Random();
@@ -47,6 +46,7 @@ namespace CafeForm
         private void NewRoundView() {
               cafe.NewClient();
             RandomNumber(3);
+            Earned_Label.Text = "";
             pictureBox1.BackgroundImage = cafe.Client[cafe.Client.ManType, cafe.Client.State];
             button1.BackgroundImage = cafe.getFoodImage(rand[0]);
             button2.BackgroundImage = cafe.getFoodImage(rand[1]);
@@ -63,6 +63,7 @@ namespace CafeForm
             Image img = cafe.GetClientWish();
             if (b.BackgroundImage.Equals(img))
             {
+
                 cafe.Client.StateIncrement();
                 EndRound(cafe.Client.EndGameCheck());
             }
@@ -81,6 +82,7 @@ namespace CafeForm
             pictureBox2.BackgroundImage = img;
             pictureBox3.BackgroundImage = b.BackgroundImage;
 
+
         }
 
         private void NewRound()
@@ -90,6 +92,7 @@ namespace CafeForm
             button1.Enabled = true;
             button2.Enabled = true;
             button3.Enabled = true;
+
             pictureBox2.BackgroundImage = Resources.ClearImage;
             pictureBox3.BackgroundImage = Resources.ClearImage;
             NewRoundView();
@@ -102,16 +105,37 @@ namespace CafeForm
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
+            int earned = 0;
             if (f == -1)
             {
+                earned = -10;
                 WinLoseimg.BackgroundImage = Resources.youLose;
             }
             else if(f == 1)
             {
+                earned = cafe.Client.State * 10;
                 WinLoseimg.BackgroundImage = Resources.youWin;
             }
+            Earned_Label.Text = "Earned: " + earned.ToString();
+            cafe.ChangeBalance(earned);
+            Balance_Label.Text = "Balance: " + cafe.GetBalance().ToString();
 
         }
+
+
+
+        /* private void EndGameCheck()
+        {
+            int flag = cafe.CheckBalance();
+            if (flag== 0)
+            {
+                return;
+            }
+            else
+            {
+                if (flag == 1)  
+            }
+        }*/
 
         private void button5_Click(object sender, EventArgs e)
         {
