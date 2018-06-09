@@ -46,8 +46,8 @@ namespace CafeForm.Classes
 
         public abstract int Pay();
 
-        public abstract bool StateIncrement();
+        public abstract void StateIncrement();
 
-        public abstract bool StateDecrement();
+        public abstract void StateDecrement();
     }
 }

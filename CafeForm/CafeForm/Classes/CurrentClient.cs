@@ -41,22 +41,18 @@ namespace CafeForm.Classes
             get { return tryCount; }
         }
 
-        public override bool StateIncrement()
+        public override void StateIncrement()
         {
-            if (state >= 3 || tryCount <= 1) return false;
             state++;
             tryCount--;
             myImage = images[manType, state];
-            return true;
         }
 
-        public override bool StateDecrement()
+        public override void StateDecrement()
         {
-            if (state <= 0 || tryCount <= 1) return false;
             state--;
             tryCount--;
             myImage = images[manType, state];
-            return true;
         }
 
         public override int Pay()
@@ -65,13 +61,16 @@ namespace CafeForm.Classes
             else return state * 10;
         }
 
-        public bool Winner()
+        public int EndGameCheck()  // -1 - програш, 0 - продовження гри, 1 - виграш
         {
-            flagWin = true;
-            if (state <= 0)
-                flagWin = false;
-
-            return flagWin;
+            if (tryCount == 0)
+            {
+                if (state == 0) return -1;
+                else return 1;
+            }
+            if (state == 0) return -1;
+            if (state == 3) return 1;
+            return 0;
         }
     }
 }

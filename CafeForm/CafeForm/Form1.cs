@@ -63,16 +63,14 @@ namespace CafeForm
             Image img = cafe.GetClientWish();
             if (b.BackgroundImage.Equals(img))
             {
-                if(!cafe.Client.StateIncrement())
-                {
-                    EndRound(cafe.Client.Winner());
-                }
-            
+                cafe.Client.StateIncrement();
+                EndRound(cafe.Client.EndGameCheck());
             }
             else
             {
-                if(!cafe.Client.StateDecrement())
-                    EndRound(cafe.Client.Winner());
+
+                cafe.Client.StateDecrement();
+                EndRound(cafe.Client.EndGameCheck());
             }
             ChangeLabels(b, img);
         }
@@ -92,19 +90,26 @@ namespace CafeForm
             button1.Enabled = true;
             button2.Enabled = true;
             button3.Enabled = true;
+            pictureBox2.BackgroundImage = Resources.ClearImage;
+            pictureBox3.BackgroundImage = Resources.ClearImage;
             NewRoundView();
         }
-        private void EndRound(bool f)
+        private void EndRound(int f)
         {
-            button5.Enabled = true;
+            if (f == 0) return;
             WinLoseimg.Visible = true;
+            button5.Enabled = true;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
-            if (f)
-                WinLoseimg.BackgroundImage = Resources.youWin;
-            else
+            if (f == -1)
+            {
                 WinLoseimg.BackgroundImage = Resources.youLose;
+            }
+            else if(f == 1)
+            {
+                WinLoseimg.BackgroundImage = Resources.youWin;
+            }
 
         }
 
