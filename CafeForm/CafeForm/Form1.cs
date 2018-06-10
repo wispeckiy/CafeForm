@@ -19,7 +19,7 @@ namespace CafeForm
             InitializeComponent();
         }
 
-        
+
         Cafe cafe;
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,13 +38,14 @@ namespace CafeForm
             while (rand.Count < number)
             {
                 int rN = r.Next(0, number);
-                if (rand.IndexOf(rN)==-1)
+                if (rand.IndexOf(rN) == -1)
                     rand.Add(rN);
             }
         }
 
-        private void NewRoundView() {
-              cafe.NewClient();
+        private void NewRoundView()
+        {
+            cafe.NewClient();
             RandomNumber(3);
             Earned_Label.Text = "";
             pictureBox1.BackgroundImage = cafe.Client[cafe.Client.ManType, cafe.Client.State];
@@ -73,7 +74,7 @@ namespace CafeForm
             }
             ChangeLabels(b, img);
         }
-        
+
         private void ChangeLabels(Button b, Image img)
         {
             pictureBox1.BackgroundImage = cafe.Client.MyImage;
@@ -111,7 +112,7 @@ namespace CafeForm
                 earned = -10;
                 WinLoseimg.BackgroundImage = Resources.youLose;
             }
-            else if(f == 1)
+            else if (f == 1)
             {
                 earned = cafe.Client.State * 10;
                 WinLoseimg.BackgroundImage = Resources.youWin;
@@ -123,16 +124,25 @@ namespace CafeForm
             int endGameFlag = cafe.EndGameCheck();
 
             if (endGameFlag == 0) return;
-            else 
-            {
-                for (int i = 0; i < this.Controls.Count; i++)
-                {
-                    this.Controls[i].ResetText();
-                }
-                if (endGameFlag == 1) this.BackgroundImage = Resources.youWin;
-                else this.BackgroundImage = Resources.youLose;
-            }
+            else EndGame(endGameFlag);
         }
+
+        private void EndGame(int endGameFlag)
+        {
+
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                this.Controls[i].ResetText();
+                this.Controls[i].BackgroundImage = Resources.ClearImage;
+                this.Controls[i].Enabled = false;
+                this.Controls[i].Visible = false;
+            }
+            if (endGameFlag == 1) this.BackgroundImage = Resources.youWin;
+            else this.BackgroundImage = Resources.youLose;
+        }
+
+
+
 
 
 
@@ -154,6 +164,6 @@ namespace CafeForm
             NewRound();
         }
     }
-
-
 }
+
+
