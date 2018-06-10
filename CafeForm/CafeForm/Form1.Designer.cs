@@ -36,8 +36,6 @@
             this.Choice_Label = new System.Windows.Forms.Label();
             this.Earned_Label = new System.Windows.Forms.Label();
             this.Balance_Label = new System.Windows.Forms.Label();
-            this.Tries_Label = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -129,27 +127,6 @@
             this.Balance_Label.Text = "Balance:";
             this.Balance_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Tries_Label
-            // 
-            this.Tries_Label.BackColor = System.Drawing.Color.Transparent;
-            this.Tries_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Tries_Label.Location = new System.Drawing.Point(530, 12);
-            this.Tries_Label.Name = "Tries_Label";
-            this.Tries_Label.Size = new System.Drawing.Size(150, 60);
-            this.Tries_Label.TabIndex = 8;
-            this.Tries_Label.Text = "Tries";
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(621, 151);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(263, 70);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "State:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
@@ -219,8 +196,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.Tries_Label);
             this.Controls.Add(this.Balance_Label);
             this.Controls.Add(this.Earned_Label);
             this.Controls.Add(this.Choice_Label);
@@ -249,8 +224,6 @@
         private System.Windows.Forms.Label Choice_Label;
         private System.Windows.Forms.Label Earned_Label;
         private System.Windows.Forms.Label Balance_Label;
-        private System.Windows.Forms.Label Tries_Label;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

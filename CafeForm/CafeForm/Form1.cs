@@ -53,6 +53,8 @@ namespace CafeForm
             button2.BackgroundImage = cafe.getFoodImage(rand[1]);
             button3.BackgroundImage = cafe.getFoodImage(rand[2]);
 
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
         }
 
 
@@ -61,6 +63,10 @@ namespace CafeForm
         {
             Button b = (Button)sender;
             Image img = cafe.GetClientWish();
+            
+            pictureBox2.Visible = true;
+            pictureBox3.Visible = true;
+
             if (b.BackgroundImage.Equals(img))
             {
                 cafe.Client.StateIncrement();
@@ -68,7 +74,6 @@ namespace CafeForm
             }
             else
             {
-
                 cafe.Client.StateDecrement();
                 EndRound(cafe.EndClientCheck());
             }
@@ -81,7 +86,6 @@ namespace CafeForm
             pictureBox2.BackgroundImage = img;
             pictureBox3.BackgroundImage = b.BackgroundImage;
 
-
         }
 
         private void NewRound()
@@ -93,19 +97,12 @@ namespace CafeForm
             button5.Enabled = false;
             button5.Visible = false;
 
-            pictureBox2.BackgroundImage = Resources.ClearImage;
-            pictureBox3.BackgroundImage = Resources.ClearImage;
             NewRoundView();
         }
         private void EndRound(int f)
         {
             if (f == 0) return;
-            WinLoseimg.Visible = true;
-            button5.Enabled = true;
-            button5.Visible = true;
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
+            Utilities.ResetEndRoundControls(this);
             int earned = 0;
             if (f == -1)
             {
@@ -130,13 +127,8 @@ namespace CafeForm
         private void EndGame(int endGameFlag)
         {
 
-            for (int i = 0; i < this.Controls.Count; i++)
-            {
-                this.Controls[i].ResetText();
-                this.Controls[i].BackgroundImage = Resources.ClearImage;
-                this.Controls[i].Enabled = false;
-                this.Controls[i].Visible = false;
-            }
+            Utilities.ResetAllControls(this);
+
             if (endGameFlag == 1) this.BackgroundImage = Resources.youWin;
             else this.BackgroundImage = Resources.youLose;
         }
