@@ -61,16 +61,6 @@ namespace CafeForm.Classes
             else return state * 10;
         }
 
-        public int EndGameCheck()  // -1 - програш, 0 - продовження гри, 1 - виграш
-        {
-            if (tryCount == 0)
-            {
-                if (state == 0) return -1;
-                else return 1;
-            }
-            if (state == 0) return -1;
-            if (state == 3) return 1;
-            return 0;
-        }
+        
     }
 }

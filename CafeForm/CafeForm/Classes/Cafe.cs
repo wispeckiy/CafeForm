@@ -56,7 +56,18 @@ namespace CafeForm.Classes
             else if (balance >= 100) return 1;
             else return -1;
         }
-        
+
+        public int EndClientCheck()  // -1 - програш, 0 - продовження гри, 1 - виграш
+        {
+            if (Client.TryCount == 0)
+            {
+                if (Client.State == 0) return -1;
+                else return 1;
+            }
+            if (Client.State == 0) return -1;
+            if (Client.State == 3) return 1;
+            return 0;
+        }
 
     }
 }

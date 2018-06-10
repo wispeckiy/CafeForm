@@ -63,15 +63,14 @@ namespace CafeForm
             Image img = cafe.GetClientWish();
             if (b.BackgroundImage.Equals(img))
             {
-
                 cafe.Client.StateIncrement();
-                EndRound(cafe.Client.EndGameCheck());
+                EndRound(cafe.EndClientCheck());
             }
             else
             {
 
                 cafe.Client.StateDecrement();
-                EndRound(cafe.Client.EndGameCheck());
+                EndRound(cafe.EndClientCheck());
             }
             ChangeLabels(b, img);
         }
