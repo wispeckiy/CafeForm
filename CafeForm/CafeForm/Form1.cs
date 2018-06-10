@@ -53,6 +53,9 @@ namespace CafeForm
             button2.BackgroundImage = cafe.getFoodImage(rand[1]);
             button3.BackgroundImage = cafe.getFoodImage(rand[2]);
 
+            button5.Visible = false;
+            button5.Enabled = false;
+
             pictureBox2.Visible = false;
             pictureBox3.Visible = false;
         }
@@ -94,8 +97,6 @@ namespace CafeForm
             button1.Enabled = true;
             button2.Enabled = true;
             button3.Enabled = true;
-            button5.Enabled = false;
-            button5.Visible = false;
 
             NewRoundView();
         }
