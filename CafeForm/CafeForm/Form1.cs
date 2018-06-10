@@ -51,7 +51,6 @@ namespace CafeForm
             button1.BackgroundImage = cafe.getFoodImage(rand[0]);
             button2.BackgroundImage = cafe.getFoodImage(rand[1]);
             button3.BackgroundImage = cafe.getFoodImage(rand[2]);
-         
 
         }
 
@@ -86,11 +85,12 @@ namespace CafeForm
 
         private void NewRound()
         {
-            button5.Enabled = false;
             WinLoseimg.Visible = false;
             button1.Enabled = true;
             button2.Enabled = true;
             button3.Enabled = true;
+            button5.Enabled = false;
+            button5.Visible = false;
 
             pictureBox2.BackgroundImage = Resources.ClearImage;
             pictureBox3.BackgroundImage = Resources.ClearImage;
@@ -101,6 +101,7 @@ namespace CafeForm
             if (f == 0) return;
             WinLoseimg.Visible = true;
             button5.Enabled = true;
+            button5.Visible = true;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -119,6 +120,18 @@ namespace CafeForm
             cafe.ChangeBalance(earned);
             Balance_Label.Text = "Balance: " + cafe.GetBalance().ToString();
 
+            int endGameFlag = cafe.EndGameCheck();
+
+            if (endGameFlag == 0) return;
+            else 
+            {
+                for (int i = 0; i < this.Controls.Count; i++)
+                {
+                    this.Controls[i].ResetText();
+                }
+                if (endGameFlag == 1) this.BackgroundImage = Resources.youWin;
+                else this.BackgroundImage = Resources.youLose;
+            }
         }
 
 

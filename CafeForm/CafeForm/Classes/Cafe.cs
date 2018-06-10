@@ -69,5 +69,11 @@ namespace CafeForm.Classes
             return 0;
         }
 
+        public int EndGameCheck()
+        {
+            if (balance >= 100) return 1;
+            else if (balance < 0) return -1;
+            else return 0;
+        }
     }
 }
