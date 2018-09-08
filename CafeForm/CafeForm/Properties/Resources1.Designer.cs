@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeForm.Properties {
+namespace CafeWPF.Properties {
     using System;
     
     
