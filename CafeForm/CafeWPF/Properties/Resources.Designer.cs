@@ -103,6 +103,16 @@ namespace CafeWPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cafe_StyleNew {
+            get {
+                object obj = ResourceManager.GetObject("Cafe_StyleNew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ClearImage {
             get {
                 object obj = ResourceManager.GetObject("ClearImage", resourceCulture);
