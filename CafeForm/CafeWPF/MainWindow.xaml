@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Z:\StudentsFiles\RPZ\RPZ3\Яічко\C#\Forms\pic\sky.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="" Stretch="UniformToFill"/>
         </Grid.Background>
         <Image HorizontalAlignment="Left" Height="100" Margin="395,193,0,0" VerticalAlignment="Top" Width="100"/>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="33,38,0,0"/>
