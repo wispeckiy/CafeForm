@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +64,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Cafe.cs" />
+    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\CurrentClient.cs" />
+    <Compile Include="Classes\Food.cs" />
+    <Compile Include="Classes\IClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,6 +100,102 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boy-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandfather-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandfather-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandfather-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandfather-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrandMather-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woman-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\You_LoseNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\You_WinNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youLose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youWin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
